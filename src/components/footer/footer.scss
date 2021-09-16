@@ -1,0 +1,74 @@
+.footer {
+  // .footer__container
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 9.3rem;
+    background-color: $whiteColor;
+    max-width: 1920px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
+    @include adaptive-value("padding-left", 50, 20, 1);
+    @include adaptive-value("padding-right", 50, 20, 1);
+  }
+
+  // .footer__logo
+
+  &__logo {
+    max-width: 220px;
+    height: 30px;
+    @media (max-width: $s) {
+      margin: 0 auto;
+      max-width: 200px;
+    }
+  }
+
+  // .footer__menu
+
+  &__menu {
+    margin-left: auto;
+    margin-right: 2rem;
+    & .menu__list {
+      flex-wrap: wrap;
+    }
+    @media (max-width: $l) {
+      flex: 1 1 auto;
+      order: 3;
+      width: 100%;
+      margin-right: 0;
+      & .menu__list {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      & .menu__item {
+        padding-bottom: 1.3rem;
+      }
+    }
+    @media (max-width: $xs) {
+      & .menu__list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  // .footer__button
+
+  &__button {
+    max-width: 16rem;
+    width: 100%;
+
+    @media (max-width: $s) {
+      flex: 1 1 auto;
+      order: 2;
+      max-width: none;
+      margin-top: 1.5rem;
+    }
+  }
+}
