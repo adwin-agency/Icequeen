@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 8rem;
+    @include adaptive-value('height', 110, 60, 1);
     margin-right: 0;
     @media (min-width: $xl) {
       margin-right: auto;
@@ -50,6 +50,7 @@
     max-width: 17rem;
     width: 100%;
     min-width: 10rem;
+    fill: $blueColor;
     @media (max-width: $l) and (min-width: $xs) {
       margin-right: auto;
     }
@@ -83,6 +84,7 @@
       width: 100%;
       display: none;
       margin: 0 auto;
+      fill: $blueColor;
     }
     @media (max-width: $l) and (min-width: $m) {
       padding: 0.7rem;

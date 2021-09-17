@@ -10,10 +10,10 @@
     max-width: 1920px;
     margin: 0 auto;
     flex-wrap: wrap;
-    margin-top: 1.7rem;
-    margin-bottom: 1.7rem;
-    @include adaptive-value("padding-left", 50, 20, 1);
-    @include adaptive-value("padding-right", 50, 20, 1);
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+    @include adaptive-value("padding-left", 50, 15, 1);
+    @include adaptive-value("padding-right", 50, 15, 1);
   }
 
   // .footer__logo
@@ -21,6 +21,7 @@
   &__logo {
     max-width: 220px;
     height: 30px;
+    fill: $blueColor;
     @media (max-width: $s) {
       margin: 0 auto;
       max-width: 200px;

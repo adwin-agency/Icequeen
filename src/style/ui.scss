@@ -14,9 +14,25 @@
   padding: 1.6rem .7rem;
   border-radius: 2rem;
   white-space: nowrap;
+  transition: .3s;
+}
+.button:disabled,
+.button[disabled] {
+  background-color: $grayColor;
+  color: #000;
+  cursor: default;
+}
+.button:disabled:hover,
+.button[disabled]:hover {
+  box-shadow: none;
+  opacity: 1;
 }
 .button_light  {
   background-color: $lightBlueColor;
+}
+.button:hover {
+  opacity: .9;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 20%)
 }
 
 // Технические классы
@@ -28,6 +44,9 @@
 }
 ._flex {
   display: flex;
+}
+._accent {
+  color: $blueColor;
 }
 
 

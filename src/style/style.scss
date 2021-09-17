@@ -34,6 +34,9 @@
       }
     } @else {
       #{$value_name}: calc(#{$min_value + px} + #{($max_value - $min_value)} * ((100vw - #{$minWidth + px}) / #{($maxWidth - $minWidth)}));
+      @media (max-width: $minWidth+px) {
+        #{$value_name}: $min_value+px;
+      }
     }
   }
 }

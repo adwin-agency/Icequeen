@@ -39,7 +39,7 @@ const path = {
     html: [`${source_folder}/pages/*.html`, `!${source_folder}/pages/_*.html`],
     style: `${source_folder}/style/style.scss`,
     js: `${source_folder}/js/script.js`,
-    images: `${source_folder}/images/**/*.{jpg, png, svg, gif, ico, webp, jpeg}`,
+    images: `${source_folder}/images/**/*.+(png|jpg|gif|ico|svg|webp|jpeg)`,
     fonts: `${source_folder}/fonts/*.ttf`,
   },
   watch: {
@@ -47,7 +47,7 @@ const path = {
     style: `${source_folder}/style/**/*.scss`,
     styleComponents: `${source_folder}/components/**/*.scss`,
     js: `${source_folder}/js/**/*.js`,
-    images: `${source_folder}/images/**/*.{jpg, png, svg, gif, ico, webp, jpeg}`,
+    images: `${source_folder}/images/**/*.+(png|jpg|gif|ico|svg|webp|jpeg)`,
   },
   clean: `./${project_folder}/`,
 };
@@ -87,7 +87,7 @@ function styleHandler() {
       }),
     )
     .pipe(groupmedia())
-    // .pipe(webpcss())
+    // .pipe(webpcss({webpClass: '.webp',noWebpClass: '.no-webp'}))
     .pipe(dest(path.build.style))
     .pipe(cleancss())
     .pipe(
@@ -151,7 +151,10 @@ function fontsHandler() {
 function callback() {}
 function fontsCreator() {
   const file_content = fs.readFileSync(`${source_folder}/style/fonts.scss`);
-  if (file_content === "") {
+  console.log(file_content);
+  // eslint-disable-next-line eqeqeq
+  if (file_content == "") {
+
     fs.writeFile(`${source_folder}/scss/fonts.scss`, "", callback);
     return fs.readdir(path.build.fonts, (err, items) => {
       if (items) {
