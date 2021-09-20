@@ -1,0 +1,18 @@
+<section class="video">
+    <div class="video__container _container">
+        <div class="video__block">
+            <video src="" poster="/images/video-poster.jpg"></video>
+            <!-- <div class="video__progressbar"><span class="video__progress"></span></div> -->
+            <button class="video__button button button_light" type="button"><span class="video__play-icon"></span>
+                смотреть Видеообзор</button>
+            <!-- <div class="video__time-dsiplay">
+                <span class="video__current">0:00</span>
+                <span class="video__separator">из</span>
+                <span class="video__duration">0:44</span>
+            </div> -->
+        </div>
+        @@include("../request-medium/request-medium.html", {
+          class: 'video__request'
+        })
+    </div>
+</section>

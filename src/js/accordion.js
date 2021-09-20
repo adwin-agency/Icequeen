@@ -1,4 +1,55 @@
-/* eslint-disable no-param-reassign */
+const accordion = () => {
+  // const accordions = document.querySelectorAll('[data-accordions]');
+  const buttons = document.querySelectorAll("[data-accordion-button]");
+  const contents = document.querySelectorAll("[data-accordion-content]");
+  const items = document.querySelectorAll("[data-accordion]");
+
+  setAccListener(buttons);
+  accordionInit(items, contents);
+};
+const setAccordionAction = (event) => {
+  event.preventDefault();
+  const element = event.target;
+  if (element.hasAttribute("data-accordion") || element.closest("[data-accordion]")) {
+    const accordionBlock = element.hasAttribute("data-accordion") ? element : element.closest("[data-accordion]");
+    const accordionContent = accordionBlock.querySelector("[data-accordion-content]");
+    const mainContainer = accordionBlock.closest("[data-accordions]");
+    if (mainContainer.hasAttribute("data-one-accordion") && !accordionBlock.classList.contains("_active")) {
+      hideAccordionBody(mainContainer);
+    }
+    if (!accordionContent.classList.contains("_slide")) {
+      accordionBlock.classList.toggle("_active");
+      slideToggle(accordionContent, 500);
+    }
+  }
+};
+const hideAccordionBody = (accordionBlock) => {
+  const accordionActiveBlock = accordionBlock.querySelector("[data-accordion]._active");
+  if (accordionActiveBlock) {
+    accordionActiveBlock.classList.remove("_active");
+    const accordionContent = accordionActiveBlock.querySelector("[data-accordion-content]");
+    slideUp(accordionContent, 500);
+  }
+};
+const setAccListener = (buttonArray) => {
+  if (buttonArray.length > 0) {
+    buttonArray.forEach((button) => {
+      button.addEventListener("click", setAccordionAction);
+    });
+  } else return;
+};
+const accordionInit = (accItemsArray, contentArray) => {
+  if (contentArray.length > 0) {
+    contentArray.forEach((contentItem) => {
+      slideToggle(contentItem);
+    });
+  }
+  if (accItemsArray.length > 0) {
+    accItemsArray.forEach((accItem) => {
+      accItem.classList.add("_init");
+    });
+  }
+};
 const slideUp = (target, duration = 500) => {
   if (!target.classList.contains("_slide")) {
     target.classList.add("_slide");
@@ -33,23 +84,23 @@ const slideDown = (target, duration = 500) => {
     if (target.hidden) {
       target.hidden = false;
     }
-    target.style.transitionProperty = "height, margin, padding";
-    target.style.transitionDuration = `${duration}ms`;
-    target.style.height = `${target.offsetHeight}px`;
+    const height = target.offsetHeight;
     // eslint-disable-next-line no-unused-expressions
-    target.offsetHeight;
     target.style.overflow = "hidden";
     target.style.height = 0;
     target.style.paddingTop = 0;
     target.style.paddingBottom = 0;
     target.style.marginTop = 0;
     target.style.marginBottom = 0;
+    target.offsetHeight;
+    target.style.transitionProperty = "height, margin, padding";
+    target.style.transitionDuration = `${duration}ms`;
+    target.style.height = `${height}px`;
     target.style.removeProperty("padding-top");
     target.style.removeProperty("padding-bottom");
     target.style.removeProperty("margin-top");
     target.style.removeProperty("margin-bottom");
     window.setTimeout(() => {
-      target.hidden = true;
       target.style.removeProperty("height");
       target.style.removeProperty("overflow");
       target.style.removeProperty("transition-duration");
@@ -65,111 +116,6 @@ const slideToggle = (target, duration = 500) => {
   return slideUp(target, duration);
 };
 
-const arrayAccContainer = document.querySelectorAll("[data-accordions]");
-
-if (arrayAccContainer.length > 0) {
-  const initAccordionBody = (accordionBlock, hideAccordionBody = false) => {
-    const accordionTitles = accordionBlock.querySelectorAll("[data-accordion]");
-    if (accordionTitles.length > 0) {
-      accordionTitles.forEach((accordionTitle) => {
-        if (hideAccordionBody) {
-          accordionTitle.removeAttribute("tabindex");
-          if (!accordionTitle.classList.contains("_active")) {
-            // eslint-disable-next-line no-param-reassign
-            accordionTitle.nextElementSibling.hidden = true;
-          } else {
-            accordionTitle.setAttribute("tabindex", "-1");
-            // eslint-disable-next-line no-param-reassign
-            accordionTitle.nextElementSibling.hidden = false;
-          }
-        }
-      });
-    }
-  };
-
-  const hideAccordionBody = (accordionBlock) => {
-    const accordionActiveTitles = accordionBlock.querySelectorAll("[data-accordion]._active");
-    if (accordionActiveTitles) {
-      accordionActiveTitles.classList.remove("_active");
-      slideUp(accordionActiveTitles.nextElementSibling, 500);
-    }
-  };
-
-  const setAccordionAction = (event) => {
-    event.preventDefault();
-    const element = event.target;
-    if (element.hasAttribute("data-accordion") || element.closest("[data-accordion]")) {
-      const accordionTitle = element.hasAttribute("data-accordion") ? element : element.closest("[data-accordion]");
-      const accordionBlock = accordionTitle.closest("[data-accordion]");
-      const oneAccordion = !!accordionBlock.hasAttribute("data-one-accordion");
-      if (!oneAccordion && accordionTitle.classList.contains("_active")) {
-        hideAccordionBody(accordionBlock);
-      }
-      accordionTitle.classList.toggel("_active");
-      slideToggle(accordionTitle.nextElementSibling, 500);
-    }
-  };
-
-  const initAccordion = (accordionArray, matchMedia = false) => {
-    accordionArray.forEach((accordionBlock) => {
-      // eslint-disable-next-line no-param-reassign
-      accordionBlock = matchMedia ? accordionBlock.item : accordionBlock;
-      if (matchMedia.matches || !matchMedia) {
-        accordionBlock.classList.add("_init");
-        initAccordionBody(accordionBlock);
-        accordionBlock.addEventListener("click", setAccordionAction);
-      } else {
-        accordionBlock.classList.remove("_init");
-        initAccordionBody(accordionBlock, false);
-        accordionBlock.removeEventListener("click", setAccordionAction);
-      }
-    });
-  };
-
-  // Получение обычных блоков
-  const accordionRegular = Array.from(arrayAccContainer).filter((item) => !item.dataset.accordion.split(",")[0]);
-  // Инициализация обычных блоков
-  if (accordionRegular.length > 0) {
-    initAccordion(accordionRegular);
-  }
-  // Получение блоков с мида запросами
-  const accordionMedia = Array.from(arrayAccContainer).filter((item) => item.dataset.accordion.split(",")[0]);
-  // Инициализация блоков с медиазапросами
-
-  if (accordionMedia.length > 0) {
-    const breakpointsArray = [];
-    accordionMedia.forEach((item) => {
-      const params = item.datast.accordions;
-      const breakpoint = {};
-      const paramsArray = params.split(",");
-      // eslint-disable-next-line prefer-destructuring
-      breakpoint.value = paramsArray[0];
-      breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : "max";
-      breakpoint.item = item;
-      breakpointsArray.push(breakpoint);
-    });
-
-    let mediaQueries = breakpointsArray.map((item) => `(${item.type}-width: ${item.value}px), ${item.value}, ${item.type}`);
-
-    mediaQueries = mediaQueries.filter((item, index, self) => self.indexOf(item) === index);
-
-    mediaQueries.forEach((breakpoint) => {
-      const paramsArray = breakpoint.split(",");
-      const mediaBreakpoint = paramsArray[1];
-      const mediaType = paramsArray[2];
-      const matchMedia = window.matchMedia(paramsArray[0]);
-
-      const accordionArray = breakpointsArray.filter((item) => {
-        if (item.value === mediaBreakpoint && item.type === mediaType) {
-          return true;
-        }
-        return false;
-      });
-
-      matchMedia.addEventListener("change", () => {
-        initAccordion(accordionArray, matchMedia);
-      });
-      initAccordion(accordionArray, matchMedia);
-    });
-  }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  accordion();
+});

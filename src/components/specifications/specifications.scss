@@ -1,30 +1,79 @@
 .specifications {
+  @include adaptive-value("margin-top", 181, 146, 1);
+  @include adaptive-value("margin-bottom", 341, 84, 1);
   // .specifications__container
-
+  &__wrapper {
+    padding: 0 15px;
+  }
   &__container {
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     background-color: $lightGrayColor;
     border-radius: 50px;
     max-width: 1580px;
     margin: 0 auto;
-    padding: 0 15px;
 
-    @include adaptive-value("margin-top", 181, 146, 1);
-    @include adaptive-value("margin-bottom", 341, 84, 1);
+    @media (max-width: $s) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   // .specifications__image
 
   &__image {
-    margin: -70px 0 -104px;
-    z-index: 20;
+    z-index: 2;
+    margin-top: -60px;
+    position: relative;
+    text-align: center;
+    @media (min-width: $s) {
+      margin-bottom: -104px;
+    }
+    @media (max-width: $s) {
+      width: 45%;
+    }
+    @media (max-width: $xxs) {
+      margin-top: 0px;
+    }
   }
 
+  // .specifications__point
+  &__point {
+    @include adaptive-value("width", 12, 10, 1);
+    @include adaptive-value("height", 12, 10, 1);
+    background-color: $blueColor;
+
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    right: 25%;
+    border: 1px solid $whiteColor;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $lightBlueColor;
+      opacity: 0.16;
+      @include adaptive-value("width", 34, 20, 1);
+      @include adaptive-value("height", 34, 20, 1);
+      border-radius: 50%;
+    }
+  }
   // .specifications__content
 
   &__content {
-    max-width: 600px;
+    @include adaptive-value("padding-left", 70, 20, 1);
+    @include adaptive-value("padding-right", 70, 20, 1);
+    @include adaptive-value("padding-bottom", 100, 70, 1);
+    @media (max-width: $l) and (min-width: $s) {
+      flex: 70%;
+    }
+    @media (min-width: $s) {
+      max-width: 600px;
+    }
   }
 
   // .specifications__title
@@ -32,10 +81,17 @@
   &__title {
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
     line-height: 36px;
     letter-spacing: -0.02em;
+    z-index: 5;
+    @include adaptive-value("font-size", 30, 24, 1);
     @include adaptive-value("margin-top", 118, 63, 960);
+    @media (max-width: $s) {
+      position: absolute;
+      top: -105px;
+      left: 0;
+      margin-top: 0;
+    }
   }
 
   // .specifications__box
@@ -51,22 +107,30 @@
     font-size: 20px;
     line-height: 26px;
     z-index: 2;
-    @include adaptive-value("margin-top", 101, 85, 960);
+    position: relative;
+    @include adaptive-value("margin-top", 101, 20, 1);
   }
 
   // .specifications__number
 
   &__number {
-    font-family: LibreBaskerville, Arial, Helvetica, sans-serif;
+    position: absolute;
+    z-index: -1;
+    top: -1rem;
+    left: 0;
+    font-family: Merriweather, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 140px;
     line-height: 46px;
     letter-spacing: -0.02em;
     /* light blue */
     color: $lightGrayColor;
-    text-shadow: 1px 0 1px $blueColor, 0 1px 1px $blueColor,
-      -1px 0 1px $blueColor, 0 -1px 1px $blueColor;
+    text-shadow: 1px 0 1px $lightBlueColor, 0 1px 1px $lightBlueColor, -1px 0 1px $lightBlueColor,
+      0 -1px 1px $lightBlueColor;
+    @include adaptive-value("font-size", 140, 90, 960);
+    @media (min-width: $s) {
+      left: -14%;
+    }
   }
 
   // .specifications__text
@@ -74,7 +138,10 @@
   &__text {
     font-style: normal;
     font-weight: 300;
-    font-size: 18px;
     line-height: 32px;
+    z-index: 2;
+    position: relative;
+    @include adaptive-value("font-size", 18, 16, 1);
+    @include adaptive-value("margin-top", 57, 27, 960);
   }
 }

@@ -1,17 +1,28 @@
 .procedure {
-  // .procedure__container
+  z-index: 2;
+  position: relative;
+  margin-top: -400px;
 
+  @media (max-width: $iphoneMax) {
+    margin-top: -560px;
+  }
+  // .procedure__container
   &__container {
+    margin: 0 auto;
+    @media (min-width: $s) {
+      padding: 0 1rem;
+      max-width: 1400px;
+    }
+  }
+
+  &__wrapper {
     display: flex;
     background-color: $whiteColor;
-    margin: 0 auto;
     @media (max-width: $s) {
       flex-direction: column;
     }
     @media (min-width: $s) {
-      padding: 0 1rem;
       box-shadow: 0px 54px 80px -40px rgba(0, 0, 0, 0.15);
-      max-width: 1400px;
     }
   }
 
@@ -52,11 +63,12 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
-    padding: 9px 28px;
+    padding: 9px 8px;
     background-color: $grayColor;
     box-shadow: 0px 54px 80px -40px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    max-width: 388px;
+    text-align: center;
+    max-width: 344px;
     margin-top: 1.35rem;
   }
 
@@ -107,7 +119,6 @@
 
   // procedure__block-request
   &__block-request {
-
     @media (max-width: $m) {
       flex: 100%;
     }
@@ -117,90 +128,3 @@
   }
 }
 
-.request-average {
-  // .request-average__form
-
-  &__form {
-    background: linear-gradient(
-      135deg,
-      #035fa1 0%,
-      #0086b5 56.77%,
-      #1779bf 90.1%
-    );
-    color: $whiteColor;
-    @include adaptive-value("padding-top", 60, 37, 1);
-    @include adaptive-value("padding-left", 80, 20, 1);
-    @include adaptive-value("padding-right", 80, 20, 1);
-    padding-bottom: 2rem;
-  }
-
-  // .request-average__fieldset
-
-  &__fieldset {
-    border: none;
-    margin: 0;
-  }
-
-  // .request-average__title
-
-  &__title {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 26px;
-    margin-bottom: 1rem;
-  }
-
-  // .request-average__lable
-
-  &__lable {
-    margin-top: 1rem;
-    display: block;
-  }
-
-  // .request-average__lable-text
-
-  &__lable-text {
-    display: block;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 16px;
-    margin-bottom: .3rem;
-  }
-
-  // .request-average__input
-
-  &__input {
-    display: block;
-    width: 100%;
-    font-family: $fontFamily Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    padding: 20px 10px;
-  }
-
-  // .request-average__button
-
-  &__button {
-    width: 100%;
-    margin-top: 1.4rem;
-  }
-
-  // .request-average__privacy
-
-  &__privacy {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 16px;
-    text-align: center;
-    color: $grayColor;
-    margin-top: 1.4rem;
-  }
-
-  // .request-average__privacy-link
-
-  &__privacy-link {
-    text-decoration: underline;
-  }
-}

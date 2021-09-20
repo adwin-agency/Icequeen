@@ -1,0 +1,139 @@
+.request-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.6);
+  &._open {
+    display: block;
+  }
+
+    // .request-average__container
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  // .request-average__form
+
+  &__form {
+    background: linear-gradient(
+      135deg,
+      #035fa1 0%,
+      #0086b5 56.77%,
+      #1779bf 90.1%
+    );
+    color: $whiteColor;
+    padding-bottom: 5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    @include adaptive-value("padding-top", 60, 37, 1);
+    @include adaptive-value("padding-left", 80, 20, 1);
+    @include adaptive-value("padding-right", 80, 20, 1);
+
+    @media (min-width: $xs) {
+      display: block;
+      max-width: 32rem;
+      height: auto;
+    }
+  }
+
+    // .request-popup__close
+
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include adaptive-value("padding", 20, 10, 1);
+    }
+
+    // .request-popup__close-icon
+
+    &__close-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+  // .request-average__fieldset
+
+  &__fieldset {
+    border: none;
+    margin: 0;
+  }
+
+  // .request-average__title
+
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  // .request-average__lable
+
+  &__lable {
+    margin-top: 1.6rem;
+    display: block;
+  }
+
+  // .request-average__lable-text
+
+  &__lable-text {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 0.3rem;
+  }
+
+  // .request-average__input
+
+  &__input {
+    display: block;
+    width: 100%;
+    font-family: $fontFamily Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: 20px 10px;
+  }
+
+  // .request-average__button
+
+  &__button {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  // .request-average__privacy
+
+  &__privacy {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: $grayColor;
+    margin-top: 1.4rem;
+  }
+
+  // .request-average__privacy-link
+
+  &__privacy-link {
+    text-decoration: underline;
+  }
+}

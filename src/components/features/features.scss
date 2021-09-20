@@ -1,0 +1,91 @@
+.features {
+    // .features__container
+
+    &__container {
+        @include adaptive-value("margin-top", 170, 42, 1);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include adaptive-value("grid-row-gap", 170, 15, 1);
+        @media (max-width: $s) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // .features__item
+
+    &__item {
+        // features__item_value
+        &_value {
+            @media (max-width: $s) {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-bottom: 47px;
+            }
+            @media (max-width: $xs) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    // .features__title
+
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+    }
+
+    // .features__text
+
+    &__text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    // .features__box
+
+    &__box {
+        display: flex;
+        @include adaptive-value("margin-bottom", 40, 20, 1);
+        @media (min-width: $s) {
+            align-items: center;
+            justify-content: space-between;
+            @include adaptive-value("padding-left", 306, 40, 768);
+        }
+        @media (max-width: $s) {
+            flex-direction: column;
+            margin-right: 1.25rem;
+        }
+    }
+
+    // .features__value
+
+    &__value {
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 29px;
+        line-height: 40px;
+        white-space: nowrap;
+        width: 50%;
+    }
+
+    // .features__variable
+
+    &__variable {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: left;
+        @media (min-width: $s) {
+            margin-left: 1rem;
+            width: 50%;
+        }
+    }
+}

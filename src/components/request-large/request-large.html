@@ -1,0 +1,35 @@
+<section class="request-large">
+  <div class="request-large__container _container">
+    <form class="request-large__form" name="largeForm">
+      <fieldset class="request-large__fieldset">
+        <div class="request-large__header">
+          <legend class="request-large__title">Остались вопросы?</legend>
+          <p class="request-large__text">Оставьте заявку и наши менеджеры свяжутся с вами в ближайшее время
+          </p>
+        </div>
+        <div class="request-large__content">
+          <div class="request-large__box">
+            <label class="request-large__lable request-large__lable_mini" for="request-large-name">
+              <span class="request-large__lable-text">Имя</span>
+              <input class="request-large__input" id="request-large-name" type="text" name="name" minlength="2" maxlength="30" required="">
+            </label>
+            <label class="request-large__lable request-large__lable_mini" for="request-large-name">
+              <span class="request-large__lable-text">Телефон</span>
+              <input class="request-large__input" id="request-large-tel" type="tel" name="tel" pattern="^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$" required="">
+            </label>
+          </div>
+          <label class="request-large__lable" for="request-large-name">
+            <span class="request-large__lable-text">Задайте вопрос</span>
+            <textarea class="request-large__textarea" name="textarea" cols="30" rows="10"></textarea>
+          </label>
+          <div class="request-large__box request-large__box_reverse">
+            <button class="request-large__button button button_light" type="submit" data-popup="successful" disabled="">Отправить</button>
+            <p class="request-large__privacy">Нажимая кнопку “Отправить”, вы соглашаетесь с условиями
+              <a class="request-large__privacy-link" href="#">Политики конфиденциальности</a>
+            </p>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

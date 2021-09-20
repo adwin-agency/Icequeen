@@ -1,0 +1,114 @@
+.request-medium {
+  // .request-medium__form
+
+  &__form {
+      background: linear-gradient(135deg, #035fa1 0%, #0086b5 56.77%, #1779bf 90.1%);
+      color: $whiteColor;
+      @include adaptive-value("padding-top", 60, 37, 1);
+      @include adaptive-value("padding-left", 117, 20, 1);
+      @include adaptive-value("padding-right", 80, 20, 1);
+      @include adaptive-value("padding-bottom", 70, 53, 1);
+  }
+
+  // .request-medium__fieldset
+
+  &__fieldset {
+      border: none;
+      margin: 0;
+      @media (max-width: $m) and (min-width: $s) {
+          display: flex;
+      }
+  }
+
+  // request-medium__header
+
+  &__header {
+      @media (max-width: $m) and (min-width: $s) {
+          width: 50%;
+          margin-right: 2rem;
+      }
+  }
+
+  // .request-medium__title
+
+  &__title {
+      font-style: normal;
+      font-weight: bold;
+      line-height: 36px;
+      letter-spacing: -0.02em;
+      @include adaptive-value("font-size", 30, 21, 1);
+      @include adaptive-value("margin-bottom", 37, 24, 1);
+  }
+  // .request-medium__box
+  &__box {
+      display: flex;
+      @include adaptive-value("margin-bottom", 37, 24, 1);
+  }
+  // .request-medium__icon
+  &__icon {
+      width: 37px;
+      height: 46px;
+      margin-right: 20px;
+  }
+
+  // .request-medium__subtitle
+
+  &__subtitle {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 22px;
+  }
+  // .request-medium__lable
+
+  &__lable {
+      margin-top: 1rem;
+      display: block;
+  }
+
+  // .request-medium__lable-text
+
+  &__lable-text {
+      display: block;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 16px;
+      margin-bottom: 0.3rem;
+  }
+
+  // .request-medium__input
+
+  &__input {
+      display: block;
+      width: 100%;
+      font-family: $fontFamily Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      padding: 20px 10px;
+  }
+
+  // .request-medium__button
+
+  &__button {
+      width: 100%;
+      margin-top: 1.4rem;
+  }
+
+  // .request-medium__privacy
+
+  &__privacy {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      color: $grayColor;
+      margin-top: 1.4rem;
+  }
+
+  // .request-medium__privacy-link
+
+  &__privacy-link {
+      text-decoration: underline;
+  }
+}

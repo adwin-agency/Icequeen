@@ -1,0 +1,34 @@
+<div class="@@class request-medium">
+  <form class="request-medium__form" name="mediumForm">
+      <fieldset class="request-medium__fieldset">
+          <div class="request-medium__header">
+              <legend class="request-medium__title">Оставь заявку и начни зарабатывать в нише, где пока нет
+                  конкурентов</legend>
+              <div class="request-medium__box">
+                  <svg class="request-medium__icon">
+                      <use xlink:href="/images/icons/sprite.svg#calculator"></use>
+                  </svg>
+                  <p class="request-medium__text">Индивидуальный расчёт финансовой модели для вашего города
+                      БЕСПЛАТНО</p>
+              </div>
+          </div>
+          <div class="request-medium__content">
+              <label class="request-medium__lable" for="request-medium-name">
+                  <span class="request-medium__lable-text">Имя</span>
+                  <input class="request-medium__input" id='request-medium-name' type="text" name="name" minlength="2" maxlength="30"
+                      required>
+              </label>
+              <label class="request-medium__lable" for="request-medium-tel">
+                  <span class="request-medium__lable-text">Телефон</span>
+                  <input class="request-medium__input" id='request-medium-tel' type="tel" name="tel"
+                  pattern="^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$" required>
+              </label>
+              <button class="request-medium__button button button_light" type="submit" data-popup="successful" disabled>Оставить
+                  заявку</button>
+              <p class="request-medium__privacy">Нажимая кнопку “Оставить заявку”, вы соглашаетесь с условиями
+                  <a class="request-medium__privacy-link" href="#">Политики конфиденциальности</a>
+              </p>
+          </div>
+      </fieldset>
+  </form>
+</div>

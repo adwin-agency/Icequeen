@@ -1,0 +1,45 @@
+.map {
+    background-color: $oceanBlueColor;
+    // .map__container
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+
+    // .map__background
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    // .map__title
+
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 1.3;
+        color: $whiteColor;
+        letter-spacing: -0.02em;
+
+        z-index: 2;
+        @include adaptive-value("font-size", 40, 15, 1);
+        @include adaptive-value("padding-top", 400, 150, 1);
+        @include adaptive-value("padding-bottom", 700, 470, 1);
+        @media (min-width: $s) {
+            width: 60%;
+        }
+        @media (max-width: $iphoneMax) {
+          padding-bottom: 650px;
+      }
+    }
+}

@@ -1,0 +1,84 @@
+.documentation {
+    // .documentation__container
+    @include adaptive-value("margin-top", 130, 40, 1);
+    &__container {
+        @media (max-width: $s) {
+            padding: 0;
+        }
+    }
+
+    // .documentation__item
+
+    &__item {
+        &._init {
+            .documentation__button-arrow {
+                display: block;
+            }
+        }
+        &._init._active {
+            .documentation__button-arrow {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    // .documentation__line
+
+    &__line {
+        display: block;
+        height: 3px;
+        background-color: $blueColor;
+    }
+
+    // .documentation__button
+
+    &__button {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include adaptive-value("padding-top", 45, 25, 1);
+        @include adaptive-value("padding-bottom", 45, 25, 1);
+
+        @media (max-width: $s) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    // .documentation__button-arrow
+
+    &__button-arrow {
+        display: none;
+        width: 1rem;
+        height: 0.5rem;
+        transition: 0.4s;
+    }
+
+    // .documentation__title
+
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: left;
+        color: $blueColor;
+        @include adaptive-value("font-size", 20, 17, 1);
+    }
+
+    // .documentation__box
+
+    &__box {
+        @include adaptive-value("margin-bottom", 45, 25, 1);
+    }
+
+    // .documentation__text
+
+    &__text {
+        @media (max-width: $s) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}

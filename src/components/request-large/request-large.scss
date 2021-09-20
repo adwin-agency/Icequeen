@@ -1,0 +1,140 @@
+.request-large {
+    // .request-large__form
+    background-image: url("/images/request-large_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    &__form {
+        color: $whiteColor;
+        @include adaptive-value("padding-top", 80, 35, 1);
+        @include adaptive-value("padding-bottom", 70, 30, 1);
+    }
+
+    // .request-large__fieldset
+
+    &__fieldset {
+        border: none;
+        margin: 0;
+
+        @media (min-width: $s) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    // request-medium__header
+
+    &__header {
+        max-width: 461px;
+        @media (min-width: $s) {
+            padding-right: 80px;
+        }
+    }
+    // request-medium&__content
+    &__content {
+        max-width: 780px;
+        width: 100%;
+    }
+    // .request-large__title
+
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        @include adaptive-value("font-size", 30, 21, 1);
+        @include adaptive-value("margin-bottom", 23, 10, 1);
+    }
+
+    // .request-large__subtitle
+
+    &__subtitle {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    // .request-large__box {
+    &__box {
+        @media (min-width: $s) {
+            display: flex;
+            justify-content: space-between;
+            &_reverse {
+              flex-direction: row-reverse;
+            }
+        }
+    }
+    // .request-large__lable
+
+    &__lable {
+        margin-top: 1rem;
+        display: block;
+    }
+    // request-large__lable_mini
+    &__lable_mini {
+        @media (min-width: $s) {
+            width: 48%;
+        }
+    }
+
+    // .request-large__lable-text
+
+    &__lable-text {
+        display: block;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 0.3rem;
+    }
+
+    // .request-large__textarea
+
+    &__textarea {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    // .request-large__input
+
+    &__input {
+        display: block;
+        width: 100%;
+        font-family: $fontFamily Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        padding: 20px 10px;
+    }
+
+    // .request-large__button
+
+    &__button {
+        width: 100%;
+        margin-top: 1.4rem;
+        @media (min-width: $s) {
+          max-width: 280px;
+        }
+    }
+
+    // .request-large__privacy
+
+    &__privacy {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 16px;
+        color: $grayColor;
+        margin-top: 1.4rem;
+        width: 100%;
+        max-width: 380px;
+        @media (max-width: $s) {
+          text-align: center;
+        }
+    }
+
+    // .request-large__privacy-link
+
+    &__privacy-link {
+        text-decoration: underline;
+    }
+}

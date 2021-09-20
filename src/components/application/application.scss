@@ -1,0 +1,177 @@
+.application {
+    background-color: $oceanBlueColor;
+    color: $grayColor;
+    // .application__container
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        @include adaptive-value("padding-top", 175, 40, 1);
+        @media (max-width: $m) {
+            flex-direction: column;
+        }
+    }
+    // .application__header
+    &__header {
+        @media (min-width: $xs) and (max-width: $m) {
+            max-width: 600px;
+            margin-right: 4rem;
+        }
+    }
+    // .application__content
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        @media (min-width: $m) {
+            flex-direction: column;
+            margin-right: 5rem;
+            align-items: flex-start;
+            max-width: 600px;
+            width: 70%;
+        }
+        @media (max-width: $m) {
+            margin-bottom: 5rem;
+        }
+        @media (max-width: $xs) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    // .application__box
+    &__box {
+      margin-bottom: 34px
+    }
+    // .application__title
+
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: $whiteColor;
+        @include adaptive-value("margin-bottom", 45, 20, 1);
+        // .application__title_accent
+        &_accent {
+        }
+    }
+
+    // .application__text
+
+    &__text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 32px;
+        & b {
+            color: $whiteColor;
+        }
+    }
+
+    // .application__directions
+
+    &__directions {
+        margin-top: 50px;
+        @media (max-width: $s) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    // .application__directions-number
+
+    &__directions-number {
+        font-family: Merriweather;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: $blueColor;
+        @include adaptive-value("font-size", 140, 100, 1);
+        @media (max-width: $s) {
+            margin-right: 2rem;
+        }
+    }
+
+    // .application__directions-text
+
+    &__directions-text {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: $whiteColor;
+        margin-top: 1rem;
+    }
+
+    // .application__list
+
+    &__list {
+        @media (min-width: $m) {
+            max-width: 820px;
+            width: 100%;
+        }
+    }
+
+    // .application__list-title
+
+    &__list-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+        color: $whiteColor;
+        @include adaptive-value("font-size", 20, 17, 1);
+    }
+
+    // .application__item
+
+    &__item {
+        &._init {
+            .application__button-arrow {
+                display: block;
+            }
+        }
+        &._init._active {
+            .application__button-arrow {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    // .application__line
+
+    &__line {
+        display: block;
+        height: 3px;
+        background-color: $blueColor;
+    }
+
+    // .application__button
+
+    &__button {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include adaptive-value("padding-top", 45, 25, 1);
+        @include adaptive-value("padding-bottom", 45, 25, 1);
+
+        @media (max-width: $s) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    // .application__button-arrow
+
+    &__button-arrow {
+        display: none;
+        width: 1rem;
+        height: 0.5rem;
+        transition: 0.4s;
+    }
+}

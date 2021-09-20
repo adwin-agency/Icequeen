@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  @include adaptive-value("padding-bottom", 132, 55, 1);
   &__container {
     display: flex;
     @include adaptive-value("margin-top", 153, 54, 1);

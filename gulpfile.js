@@ -122,7 +122,7 @@ function imagesHandler() {
   return src(path.src.images)
     .pipe(
       webp({
-        quality: 70,
+        quality: 80,
       }),
     )
     .pipe(dest(path.build.images))
@@ -132,7 +132,7 @@ function imagesHandler() {
         progressive: true,
         svgoPlugins: [{ removeViewBox: false }],
         interlaced: true,
-        optimizationLevel: 3, // 0 to 7
+        optimizationLevel: 2, // 0 to 7
       }),
     )
     .pipe(dest(path.build.images))
@@ -148,13 +148,11 @@ function fontsHandler() {
     .pipe(dest(path.build.fonts));
 }
 
-function callback() {}
+function callback() { }
 function fontsCreator() {
   const file_content = fs.readFileSync(`${source_folder}/style/fonts.scss`);
-  console.log(file_content);
   // eslint-disable-next-line eqeqeq
   if (file_content == "") {
-
     fs.writeFile(`${source_folder}/scss/fonts.scss`, "", callback);
     return fs.readdir(path.build.fonts, (err, items) => {
       if (items) {

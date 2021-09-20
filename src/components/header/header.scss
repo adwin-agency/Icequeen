@@ -3,6 +3,16 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+
+  &._menu-open {
+    .header__menu {
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate(0, 0);
+
+    }
+  }
   // .header__wrapper
   &__wrapper {
     position: fixed;
@@ -19,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include adaptive-value('height', 110, 60, 1);
+    @include adaptive-value("height", 110, 60, 1);
     margin-right: 0;
     @media (min-width: $xl) {
       margin-right: auto;
@@ -27,6 +37,7 @@
   }
   // .header__burger
   &__burger {
+    z-index: 40;
     display: none;
     width: 2.5rem;
     height: 2rem;
@@ -46,6 +57,7 @@
   }
   // .header__logo
   &__logo {
+    z-index: 40;
     height: 100%;
     max-width: 17rem;
     width: 100%;
@@ -63,8 +75,38 @@
   &__menu {
     padding: 0 1rem;
     width: 100%;
+
     @media (max-width: $m) {
-      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translate(-120%, 0);
+      transition: .3s;
+      background-color: $whiteColor;
+
+      & .menu__body {
+        height: auto;
+        margin-top: 100px;
+        @include adaptive-value("margin-left", 120, 20, 1);
+      }
+
+      & .menu__list {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      & .menu__item {
+        text-align: start;
+        font-style: normal;
+        font-weight: bold;
+        @include adaptive-value("font-size", 18, 16, 1);
+        line-height: 16px;
+        margin-bottom: 52px;
+        padding: 0;
+      }
     }
   }
   // .header__button
@@ -152,15 +194,19 @@
     &._focus {
       color: $blueColor;
       position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 0.2rem;
-        background-color: $blueColor;
+
+      @media (min-width: $m) {
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.2rem;
+          background-color: $blueColor;
+        }
       }
+
     }
   }
 }
