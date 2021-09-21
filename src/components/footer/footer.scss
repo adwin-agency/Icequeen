@@ -7,7 +7,7 @@
     align-items: center;
     max-height: 9.3rem;
     background-color: $whiteColor;
-    max-width: 1920px;
+    max-width: 137.14rem;
     margin: 0 auto;
     flex-wrap: wrap;
     padding-top: 1.7rem;
@@ -19,12 +19,12 @@
   // .footer__logo
 
   &__logo {
-    max-width: 220px;
-    height: 30px;
+    max-width: 15.7rem;
+    height: 2.14rem;
     fill: $blueColor;
     @media (max-width: $s) {
       margin: 0 auto;
-      max-width: 200px;
+      max-width: 14.3;
     }
   }
 

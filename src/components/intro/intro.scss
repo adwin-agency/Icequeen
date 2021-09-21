@@ -38,7 +38,7 @@
       }
       @media (max-width: $xs) {
         position: absolute;
-        bottom: 210px;
+        bottom: 15rem;
         left: 0;
       }
     }
@@ -53,6 +53,18 @@
     text-transform: uppercase;
     @include adaptive-value("font-size",20, 17, 960);
     @include adaptive-value("margin-top",260, 120, 960);
+    position: relative;
+    display: flex;
+    @media (min-width: $l) {
+      &::before {
+        content: '';
+        flex: 0 0 4.3rem;
+        background-color: $blueColor;
+        margin-top: .5rem;
+        height: 0.25rem;
+        margin-right: 1rem;
+      }
+    }
   }
 
   // .intro__title

@@ -4,7 +4,7 @@
     @include adaptive-value("margin-bottom", 196, 35, 1);
     &__container {
         display: flex;
-        max-width: 1620px;
+        max-width: 115.7rem;
         @media (min-width: $l) {
             padding-left: 5rem;
             transform: translate(-4rem, 0);
@@ -29,7 +29,7 @@
             height: 100%;
         }
         @media (max-width: $m) {
-            height: 630px;
+            height: 45rem;
         }
         @media (max-width: $s) {
             @include adaptive-value("height", 630, 250, 1);
@@ -43,7 +43,7 @@
         bottom: 2.3rem;
         left: 0;
         right: 0;
-        height: 1px;
+        height: 0.07rem;
         background-color: $grayColor;
     }
 
@@ -66,13 +66,13 @@
         transform: translate(-50%, -50%);
         padding-top: 1rem;
         padding-bottom: 1rem;
-        max-width: 340px;
+        max-width: 24.3rem;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         @media (max-width: $s) {
-            max-width: 260px;
+            max-width: 18.6rem;
         }
     }
 
@@ -80,8 +80,8 @@
     &__play-icon {
         display: inline-block;
         border-radius: 50%;
-        width: 30px;
-        height: 30px;
+        width: 2.14rem;
+        height: 2.14rem;
         background-color: $whiteColor;
         position: relative;
         margin-right: 1rem;
@@ -91,8 +91,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-20%, -50%);
-            border: 6px solid transparent;
-            border-left: 8px solid $lightBlueColor;
+            border: 0.43rem solid transparent;
+            border-left: 0.57rem solid $lightBlueColor;
         }
     }
 
@@ -126,9 +126,9 @@
 
     &__request {
         @media (min-width: $l) {
-            max-width: 600px;
+            max-width: 42.86rem;
             width: 60%;
-            transform: translate(-50px, 50px);
+            transform: translate(-3.57rem, 3.57rem);
         }
     }
 }

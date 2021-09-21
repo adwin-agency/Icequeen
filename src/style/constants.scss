@@ -1,13 +1,15 @@
 // Переменные
 $fontFamily: OpenSans;
-$mainFontSize: 14px;
+$mainFontSize: 14;
+$xlFontSize: 18;
+$xxlFontSize: 30;
 
 $maxWidth: 1920;
 $minWidth: 280;
-$maxWidthContainer: 1475px;
+$maxWidthContainer: 105.4rem;
 
 // Breakpoints
-$xxl: 2560px;
+$xxl: 2580px;
 $xl: 1940px;
 $l: 1460px;
 $m: 1050px;
@@ -15,7 +17,7 @@ $s: 768px;
 $xs: 525px;
 $xxs: 320px;
 
-$iphoneMax: 414px;
+$iphoneMax: 420px;
 
 // Цвета
 $mainColor: #1e1e1e;

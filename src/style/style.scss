@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin font($font_name, $file_name, $weight, $style) {
   @font-face {
     font-family: $font_name;
@@ -21,9 +23,10 @@
 
 |ПРИМЕР @include adaptive-value('margin-right', 50, 20, 540);|
 */
+
 @mixin adaptive-value($value_name, $max_value, $min_value, $min_width) {
   // Если больше максимальной высоты фиксируем максимальное значение как константу
-  #{$value_name}: $max_value+px;
+  #{$value_name}: ($max_value  / $mainFontSize) + rem;
   @media (max-width: $maxWidth+px) {
 // Получаем возможность регулирования нужной минмальной ширины для адаптива
     @if ($min_width >= $minWidth) {
@@ -35,7 +38,7 @@
     } @else {
       #{$value_name}: calc(#{$min_value + px} + #{($max_value - $min_value)} * ((100vw - #{$minWidth + px}) / #{($maxWidth - $minWidth)}));
       @media (max-width: $minWidth+px) {
-        #{$value_name}: $min_value+px;
+        #{$value_name}: $min_value +px;
       }
     }
   }
@@ -50,11 +53,23 @@
 body {
   height: 100%;
   color: $mainColor;
-  font-size: $mainFontSize;
+  font-size: $mainFontSize+px;
   font-family: $fontFamily -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 html {
   height: 100%;
-  font-size: $mainFontSize;
+  font-size: $mainFontSize+px;
+}
+@media (min-width: $xl) {
+  html,
+  body {
+    font-size: $xlFontSize+px;
+  }
+}
+@media (min-width: $xxl) {
+  html,
+  body {
+    font-size: $xxlFontSize+px;
+  }
 }

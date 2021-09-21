@@ -26,7 +26,7 @@
     &__title {
         font-style: normal;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 2.85rem;
         line-height: 1.3;
         color: $whiteColor;
         letter-spacing: -0.02em;
@@ -39,7 +39,7 @@
             width: 60%;
         }
         @media (max-width: $iphoneMax) {
-          padding-bottom: 650px;
+          padding-bottom: 46.3rem;
       }
     }
 }

@@ -25,14 +25,14 @@
     // request-medium__header
 
     &__header {
-        max-width: 461px;
+        max-width: 33rem;
         @media (min-width: $s) {
-            padding-right: 80px;
+            padding-right: 5.7rem;
         }
     }
     // request-medium&__content
     &__content {
-        max-width: 780px;
+        max-width: 56rem;
         width: 100%;
     }
     // .request-large__title
@@ -40,7 +40,7 @@
     &__title {
         font-style: normal;
         font-weight: bold;
-        line-height: 36px;
+        line-height: 2.6rem;
         letter-spacing: -0.02em;
         @include adaptive-value("font-size", 30, 21, 1);
         @include adaptive-value("margin-bottom", 23, 10, 1);
@@ -51,8 +51,8 @@
     &__subtitle {
         font-style: normal;
         font-weight: 600;
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
 
     // .request-large__box {
@@ -84,8 +84,8 @@
         display: block;
         font-style: normal;
         font-weight: 600;
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 1rem;
+        line-height: 1.14rem;
         margin-bottom: 0.3rem;
     }
 
@@ -93,7 +93,7 @@
 
     &__textarea {
         width: 100%;
-        padding: 20px 10px;
+        padding: 1.4rem 0.7rem;
     }
 
     // .request-large__input
@@ -103,7 +103,7 @@
         width: 100%;
         font-family: $fontFamily Arial, Helvetica, sans-serif;
         font-size: 1rem;
-        padding: 20px 10px;
+        padding: 1.4rem 0.7rem;
     }
 
     // .request-large__button
@@ -112,7 +112,7 @@
         width: 100%;
         margin-top: 1.4rem;
         @media (min-width: $s) {
-          max-width: 280px;
+          max-width: 20rem;
         }
     }
 
@@ -121,12 +121,12 @@
     &__privacy {
         font-style: normal;
         font-weight: 300;
-        font-size: 12px;
-        line-height: 16px;
+        font-size: 0.85rem;
+        line-height: 1.14rem;
         color: $grayColor;
         margin-top: 1.4rem;
         width: 100%;
-        max-width: 380px;
+        max-width: 27rem;
         @media (max-width: $s) {
           text-align: center;
         }

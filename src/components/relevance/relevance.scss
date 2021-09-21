@@ -18,10 +18,10 @@
 
   &__title {
     font-weight: bold;
-    font-size: 29px;
-    line-height: 36px;
+    font-size: 2rem;
+    line-height: 2.6rem;
     letter-spacing: -0.02em;
-    max-width: 500px;
+    max-width: 35.7rem;
     white-space: nowrap;
     @media (max-width: $s) {
       white-space: pre-wrap;
@@ -35,7 +35,7 @@
   // .relevance__block
 
   &__block {
-    max-width: 874px;
+    max-width: 62.4rem;
     @include adaptive-value("margin-left", 78, 20, 960);
     @media (max-width: $m) {
       margin-top: 1.35rem;
@@ -46,8 +46,8 @@
 
   &__text {
     font-weight: 300;
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 1.3rem;
+    line-height: 2.3rem;
   }
 
   // .relevance__subtitle
@@ -55,9 +55,9 @@
   &__subtitle {
     // .relevance__subtitle_accent
     font-weight: bold;
-    font-size: 20px;
-    line-height: 26px;
-    margin-bottom: 23px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-bottom: 1.64rem;
     @include adaptive-value("margin-top", 122, 60, 1);
     &_accent {
     }
@@ -66,7 +66,7 @@
   // .relevance__icons-block
 
   &__icons-block {
-    margin-top: 40px;
+    margin-top: 2.85rem;
   }
 }
 .relevance-icons {
@@ -75,7 +75,7 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 52px;
+    grid-row-gap: 3.7rem;
 
     @media (max-width: $xs) {
       grid-template-columns: repeat(2, 1fr);
@@ -91,9 +91,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 254px;
-    min-height: 168px;
-    border-left: 1px solid $grayColor;
+    max-width: 18rem;
+    min-height: 12rem;
+    border-left: 0.07rem solid $grayColor;
     @include adaptive-value("padding-left", 40, 20, 1);
     @media (max-width: $xxs) {
       align-items: center;
@@ -105,16 +105,16 @@
 
   &__icon {
     fill: $blueColor;
-    width: 64px;
-    height: 64px;
+    width: 4.6rem;
+    height: 4.6rem;
   }
 
   // .relevance-icons__text
 
   &__text {
     font-weight: 600;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.6rem;
     margin-top: 1.35rem;
     padding-right: 0.5rem;
   }

@@ -1,3 +1,4 @@
+const duration = 500;
 const accordion = () => {
   // const accordions = document.querySelectorAll('[data-accordions]');
   const buttons = document.querySelectorAll("[data-accordion-button]");
@@ -14,12 +15,13 @@ const setAccordionAction = (event) => {
     const accordionBlock = element.hasAttribute("data-accordion") ? element : element.closest("[data-accordion]");
     const accordionContent = accordionBlock.querySelector("[data-accordion-content]");
     const mainContainer = accordionBlock.closest("[data-accordions]");
-    if (mainContainer.hasAttribute("data-one-accordion") && !accordionBlock.classList.contains("_active")) {
+    if (mainContainer.hasAttribute("data-one-accordion") && !accordionBlock.classList.contains("_active") && !mainContainer.classList.contains("_slide")) {
       hideAccordionBody(mainContainer);
     }
-    if (!accordionContent.classList.contains("_slide")) {
+    if (!accordionContent.classList.contains("_slide") && !mainContainer.classList.contains("_slide")) {
       accordionBlock.classList.toggle("_active");
-      slideToggle(accordionContent, 500);
+      mainContainer.classList.add('_slide');
+      slideToggle(accordionContent, duration);
     }
   }
 };
@@ -75,6 +77,7 @@ const slideUp = (target, duration = 500) => {
       target.style.removeProperty("transition-duration");
       target.style.removeProperty("transition-property");
       target.classList.remove("_slide");
+      target.closest("[data-accordions]").classList.remove("_slide");
     }, duration);
   }
 };
@@ -106,6 +109,7 @@ const slideDown = (target, duration = 500) => {
       target.style.removeProperty("transition-duration");
       target.style.removeProperty("transition-property");
       target.classList.remove("_slide");
+      target.closest("[data-accordions]").classList.remove("_slide");
     }, duration);
   }
 };

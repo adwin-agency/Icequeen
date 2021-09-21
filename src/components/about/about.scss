@@ -13,7 +13,7 @@
     // .about__manufacturer
 
     &__manufacturer {
-        max-width: 260px;
+        max-width: 19rem;
         margin-right: 4rem;
     }
 
@@ -22,7 +22,7 @@
     &__title {
         font-style: normal;
         font-weight: bold;
-        line-height: 36px;
+        line-height: 2.6rem;
         white-space: nowrap;
         letter-spacing: -0.02em;
         @include adaptive-value("font-size", 30, 22, 1);
@@ -32,16 +32,16 @@
     // .about__manufacturer-icon
 
     &__manufacturer-icon {
-        width: 174px;
-        height: 76px;
+        width: 12.5rem;
+        height: 5rem;
     }
 
     // .about__description
 
     &__description {
-        max-width: 1040px;
+        max-width: 74.3rem;
         @media (max-width: $s) {
-          margin-top: 55px;
+          margin-top: 4rem;
       }
     }
 
@@ -50,8 +50,8 @@
     &__subtitle {
         font-style: normal;
         font-weight: bold;
-        font-size: 20px;
-        line-height: 26px;
+        font-size: 1.4rem;
+        line-height: 2rem;
         @include adaptive-value("margin-bottom", 50, 20, 1);
     }
 
@@ -60,8 +60,8 @@
     &__text {
         font-style: normal;
         font-weight: 300;
-        font-size: 18px;
-        line-height: 32px;
+        font-size: 1.3rem;
+        line-height: 2.3rem;
         margin-bottom: 1rem;
     }
 }

@@ -4,8 +4,8 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px 30px;
-    margin-bottom: 40px;
+    grid-gap: 2.14rem 2.14rem;
+    margin-bottom: 2.85rem;
 
     @media (max-width: $s) {
       grid-template-columns: repeat(2, 1fr);
@@ -13,7 +13,7 @@
     }
     @media (max-width: $iphoneMax) {
       grid-template-columns:  1fr;
-      grid-gap: 20px 0;
+      grid-gap: 1.4rem 0;
     }
   }
 
@@ -27,8 +27,8 @@
   // .icons-about__icon
 
   &__icon {
-    width: 49px;
-    height: 59px;
+    width: 3.5rem;
+    height: 4.2rem;
     fill: $blueColor;
   }
 
@@ -37,8 +37,8 @@
   &__text {
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.6rem;
     margin-left: .6rem;
     color: $whiteColor;
   }

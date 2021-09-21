@@ -77,8 +77,8 @@
   &__title {
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 2.14rem;
+    line-height: 2.6rem;
     text-align: center;
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
@@ -97,8 +97,8 @@
     display: block;
     font-style: normal;
     font-weight: 600;
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 1rem;
+    line-height: 1.14rem;
     margin-bottom: 0.3rem;
   }
 
@@ -109,7 +109,7 @@
     width: 100%;
     font-family: $fontFamily Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    padding: 20px 10px;
+    padding: 1.4rem 0.7rem
   }
 
   // .request-average__button
@@ -124,8 +124,8 @@
   &__privacy {
     font-style: normal;
     font-weight: 300;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 0.85rem;
+    line-height: 1.14rem;
     text-align: center;
     color: $grayColor;
     margin-top: 1.4rem;

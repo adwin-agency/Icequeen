@@ -3,20 +3,29 @@
   @include adaptive-value("margin-bottom", 341, 84, 1);
   // .specifications__container
   &__wrapper {
-    padding: 0 15px;
+    padding: 0 1rem;
+    height: 357.143rem;
   }
   &__container {
-    position: relative;
+    position: sticky;
+    top: 20%;
     display: flex;
     justify-content: space-evenly;
     background-color: $lightGrayColor;
-    border-radius: 50px;
-    max-width: 1580px;
+    border-radius: 3.6rem;
+    max-width: 113rem;
     margin: 0 auto;
 
     @media (max-width: $s) {
       flex-direction: column;
       align-items: center;
+      top: 18%;
+    }
+    @media (max-width: $iphoneMax) {
+      top: 16%;
+    }
+    @media (max-width: $xxs) {
+      top: 12%;
     }
   }
 
@@ -24,17 +33,24 @@
 
   &__image {
     z-index: 2;
-    margin-top: -60px;
+    margin-top: -4.3rem;
     position: relative;
     text-align: center;
     @media (min-width: $s) {
-      margin-bottom: -104px;
+      margin-bottom: -6.43rem;
     }
     @media (max-width: $s) {
-      width: 45%;
+      width: 37%;
+    }
+    @media (max-width: $xs) {
+      width: 32%;
+      transform: translateY(2rem);
     }
     @media (max-width: $xxs) {
-      margin-top: 0px;
+      margin-top: 0;
+    }
+    @media (max-width: $xxs) {
+      display: none;
     }
   }
 
@@ -48,7 +64,7 @@
     position: absolute;
     top: 35%;
     right: 25%;
-    border: 1px solid $whiteColor;
+    border: 0.07rem solid $whiteColor;
     &::after {
       content: "";
       position: absolute;
@@ -65,14 +81,20 @@
   // .specifications__content
 
   &__content {
-    @include adaptive-value("padding-left", 70, 20, 1);
+    overflow: hidden;
+    width: 100%;
+    @include adaptive-value("padding-left", 90, 45, 1);
     @include adaptive-value("padding-right", 70, 20, 1);
     @include adaptive-value("padding-bottom", 100, 70, 1);
     @media (max-width: $l) and (min-width: $s) {
       flex: 70%;
     }
     @media (min-width: $s) {
-      max-width: 600px;
+      max-width: 46.43rem;
+    }
+    @media (max-width: $s) {
+      min-height: 27.6rem;
+      padding-top: 2rem;
     }
   }
 
@@ -81,22 +103,36 @@
   &__title {
     font-style: normal;
     font-weight: bold;
-    line-height: 36px;
+    line-height: 2.6rem;
     letter-spacing: -0.02em;
     z-index: 5;
     @include adaptive-value("font-size", 30, 24, 1);
     @include adaptive-value("margin-top", 118, 63, 960);
     @media (max-width: $s) {
       position: absolute;
-      top: -105px;
+      top: -7.5rem;
       left: 0;
       margin-top: 0;
     }
   }
 
-  // .specifications__box
 
+  // .specifications__box
   &__box {
+    height: 100%;
+    position: relative;
+    height: 19.43rem;
+    @media (max-width: $iphoneMax) {
+      height: 22.43rem;
+    }
+
+    @media (max-width: $xxs) {
+      height: 28.43rem;
+    }
+  }
+  // .specifications__box-content
+  &__box-content {
+    position: absolute;
   }
 
   // .specifications__subtitle
@@ -104,11 +140,14 @@
   &__subtitle {
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 1.4rem;
+    line-height: 2rem;
     z-index: 2;
     position: relative;
     @include adaptive-value("margin-top", 101, 20, 1);
+    @media (max-width: $iphoneMax) {
+      margin-top: 0;
+    }
   }
 
   // .specifications__number
@@ -121,15 +160,15 @@
     font-family: Merriweather, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 300;
-    line-height: 46px;
+    line-height: 3.3rem;
     letter-spacing: -0.02em;
     /* light blue */
     color: $lightGrayColor;
-    text-shadow: 1px 0 1px $lightBlueColor, 0 1px 1px $lightBlueColor, -1px 0 1px $lightBlueColor,
-      0 -1px 1px $lightBlueColor;
+    text-shadow: 0.07rem 0 0.07rem $lightBlueColor, 0 0.07rem 0.07rem $lightBlueColor, -0.07rem 0 0.07rem $lightBlueColor,
+      0 -0.07rem 0.07rem $lightBlueColor;
     @include adaptive-value("font-size", 140, 90, 960);
     @media (min-width: $s) {
-      left: -14%;
+      left: -11%;
     }
   }
 
@@ -138,7 +177,7 @@
   &__text {
     font-style: normal;
     font-weight: 300;
-    line-height: 32px;
+    line-height: 2.3rem;
     z-index: 2;
     position: relative;
     @include adaptive-value("font-size", 18, 16, 1);

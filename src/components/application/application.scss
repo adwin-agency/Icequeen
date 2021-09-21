@@ -14,7 +14,7 @@
     // .application__header
     &__header {
         @media (min-width: $xs) and (max-width: $m) {
-            max-width: 600px;
+            max-width: 43rem;
             margin-right: 4rem;
         }
     }
@@ -28,7 +28,7 @@
             flex-direction: column;
             margin-right: 5rem;
             align-items: flex-start;
-            max-width: 600px;
+            max-width: 43rem;
             width: 70%;
         }
         @media (max-width: $m) {
@@ -41,15 +41,15 @@
     }
     // .application__box
     &__box {
-      margin-bottom: 34px
+      margin-bottom: 2.4rem;
     }
     // .application__title
 
     &__title {
         font-style: normal;
         font-weight: bold;
-        font-size: 30px;
-        line-height: 36px;
+        font-size: 2.14rem;
+        line-height: 2.6rem;
         letter-spacing: -0.02em;
         color: $whiteColor;
         @include adaptive-value("margin-bottom", 45, 20, 1);
@@ -63,8 +63,8 @@
     &__text {
         font-style: normal;
         font-weight: 300;
-        font-size: 18px;
-        line-height: 32px;
+        font-size: 1.3rem;
+        line-height: 2.3rem;
         & b {
             color: $whiteColor;
         }
@@ -73,7 +73,7 @@
     // .application__directions
 
     &__directions {
-        margin-top: 50px;
+        margin-top: 3.6rem;
         @media (max-width: $s) {
             display: flex;
             flex-wrap: wrap;
@@ -100,8 +100,8 @@
     &__directions-text {
         font-style: normal;
         font-weight: 600;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 1.43rem;
+        line-height: 1.7rem;
         color: $whiteColor;
         margin-top: 1rem;
     }
@@ -110,7 +110,7 @@
 
     &__list {
         @media (min-width: $m) {
-            max-width: 820px;
+            max-width: 58.6rem;
             width: 100%;
         }
     }
@@ -120,8 +120,8 @@
     &__list-title {
         font-style: normal;
         font-weight: bold;
-        font-size: 20px;
-        line-height: 26px;
+        font-size: 1.4rem;
+        line-height: 2rem;
         color: $whiteColor;
         @include adaptive-value("font-size", 20, 17, 1);
     }
@@ -145,7 +145,7 @@
 
     &__line {
         display: block;
-        height: 3px;
+        height: .2rem;
         background-color: $blueColor;
     }
 
@@ -161,8 +161,8 @@
         @include adaptive-value("padding-bottom", 45, 25, 1);
 
         @media (max-width: $s) {
-            padding-left: 15px;
-            padding-right: 15px;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     }
 

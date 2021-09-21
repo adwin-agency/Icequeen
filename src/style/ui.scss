@@ -60,6 +60,18 @@
 ._fixed {
   overflow: hidden;
 }
+._stickySwipeElement {
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s;
+  transform: scale(0);
+  &._active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+}
+
 
 
 // Бургер
