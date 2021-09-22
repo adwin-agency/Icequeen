@@ -3,6 +3,7 @@
 const popup = (request = true) => {
   const allPopupElements = [...document.querySelectorAll("[data-popup]")];
   const poupButtonArray = [...document.querySelectorAll("._popup-close")];
+  const popups = [...document.querySelectorAll("._popup")];
 
   const popupNames = {
     successful: "successful",
@@ -12,7 +13,10 @@ const popup = (request = true) => {
     allPopupElements.forEach((popupEl) => {
       popupEl.addEventListener("click", popupHandler);
     });
-    poupButtonArray.forEach((popupEl) => {
+    // poupButtonArray.forEach((popupEl) => {
+    //   popupEl.addEventListener("click", popupClose);
+    // });
+    popups.forEach((popupEl) => {
       popupEl.addEventListener("click", popupClose);
     });
 
@@ -40,8 +44,10 @@ const popup = (request = true) => {
     }
 
     function popupClose(event) {
-      const popupContainer = searchParent(event.target, "._popup");
-      popupContainer.classList.remove("_open");
+      if (event.target.classList.contains("_popup-close") || event.target.classList.contains("_popup-close-area")) {
+        const popupContainer = searchParent(event.target, "._popup");
+        popupContainer.classList.remove("_open");
+      }
     }
 
     function popupOpen(elementOpen) {
