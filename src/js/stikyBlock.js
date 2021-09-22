@@ -50,7 +50,7 @@ const stikyBlock = () => {
 
       function watch() {
         onScroll();
-        if (window.pageYOffset - mainContainerOffset > counter + heightToStartSwiping && flag === true && counter < endPointAnimation) {
+        if ((window.pageYOffset - mainContainerOffset) + heightToStartSwiping > counter + heightToStartSwiping && flag === true && counter < endPointAnimation) {
           index++;
           counter += heightToStartSwiping;
           if (index <= numberOfElements && index >= 0) {

@@ -107,6 +107,12 @@
         line-height: 1.14rem;
         margin-bottom: 3.7rem;
         padding: 0;
+        @media (max-width: $xs) {
+          max-width: none;
+          & br {
+            display: none;
+          }
+        }
       }
     }
   }

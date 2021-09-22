@@ -121,9 +121,9 @@
   &__box {
     height: 100%;
     position: relative;
-    height: 19.43rem;
+    height: 20.43rem;
     @media (max-width: $iphoneMax) {
-      height: 22.43rem;
+      height: 23.43rem;
     }
 
     @media (max-width: $xxs) {
@@ -164,8 +164,7 @@
     letter-spacing: -0.02em;
     /* light blue */
     color: $lightGrayColor;
-    text-shadow: 0.07rem 0 0.07rem $lightBlueColor, 0 0.07rem 0.07rem $lightBlueColor, -0.07rem 0 0.07rem $lightBlueColor,
-      0 -0.07rem 0.07rem $lightBlueColor;
+    -webkit-text-stroke: 1px $lightBlueColor;
     @include adaptive-value("font-size", 140, 90, 960);
     @media (min-width: $s) {
       left: -11%;

@@ -47,6 +47,11 @@
       }
       & .menu__item {
         padding-bottom: 1.3rem;
+        @media (max-width: $xs) {
+          & br {
+            display: none;
+          }
+        }
       }
     }
     @media (max-width: $xs) {
@@ -58,7 +63,6 @@
       }
     }
   }
-
   // .footer__button
 
   &__button {
