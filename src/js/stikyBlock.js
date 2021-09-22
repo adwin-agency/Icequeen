@@ -5,6 +5,16 @@ const stikyBlock = () => {
   const mainContainer = document.querySelector("._stickyContainer");
   const numberOfElements = 5;
   if (mainContainer) {
+    function getClass(indexEl = 0) {
+      const swipeBloks = mainContainer.querySelectorAll("._stickySwipeElement");
+      swipeBloks.forEach((block, index) => {
+        if (index === indexEl) {
+          block.classList.add("_active");
+        } else {
+          block.classList.remove("_active");
+        }
+      });
+    }
     getClass();
     const offset = (element) => {
       const rect = element.getBoundingClientRect();
@@ -26,9 +36,6 @@ const stikyBlock = () => {
 
     function scrollWatcher() {
       const mainContainerOffset = offset(mainContainer).top;
-      if ((window.pageYOffset > mainContainerOffset) && window.pageYOffset < (mainContainerOffset + mainContainerHeight)) {
-        watch();
-      } else return;
 
       function onScroll() {
         const scrollTopPosition = document.documentElement.scrollTop;
@@ -43,7 +50,7 @@ const stikyBlock = () => {
 
       function watch() {
         onScroll();
-        if (window.pageYOffset - mainContainerOffset > counter && flag === true && counter < endPointAnimation) {
+        if (window.pageYOffset - mainContainerOffset > counter + heightToStartSwiping && flag === true && counter < endPointAnimation) {
           index++;
           counter += heightToStartSwiping;
           if (index <= numberOfElements && index >= 0) {
@@ -56,18 +63,11 @@ const stikyBlock = () => {
             getClass(index);
           }
         }
+        console.log(counter);
       }
-    }
-
-    function getClass(indexEl = 0) {
-      const swipeBloks = mainContainer.querySelectorAll("._stickySwipeElement");
-      swipeBloks.forEach((block, index) => {
-        if (index === indexEl) {
-          block.classList.add("_active");
-        } else {
-          block.classList.remove("_active");
-        }
-      });
+      if ((window.pageYOffset > mainContainerOffset) && window.pageYOffset < (mainContainerOffset + mainContainerHeight)) {
+        watch();
+      }
     }
     window.addEventListener("scroll", scrollWatcher);
   }
