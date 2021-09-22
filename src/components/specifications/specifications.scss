@@ -59,11 +59,8 @@
     @include adaptive-value("width", 12, 10, 1);
     @include adaptive-value("height", 12, 10, 1);
     background-color: $blueColor;
-
     border-radius: 50%;
     position: absolute;
-    top: 35%;
-    right: 25%;
     border: 0.07rem solid $whiteColor;
     &::after {
       content: "";
@@ -76,6 +73,27 @@
       @include adaptive-value("width", 34, 20, 1);
       @include adaptive-value("height", 34, 20, 1);
       border-radius: 50%;
+    }
+
+    &.point_1 {
+      top: 15%;
+      right: 25%;
+    }
+    &.point_2 {
+      top: 42%;
+      right: 30%;
+    }
+    &.point_3 {
+      top: 12%;
+      right: 48%
+    }
+    &.point_4 {
+      top: 35%;
+      right: 50%;
+    }
+    &.point_5 {
+      top: 70%;
+      right: 45%;
     }
   }
   // .specifications__content

@@ -7,7 +7,15 @@ const stikyBlock = () => {
   if (mainContainer) {
     function getClass(indexEl = 0) {
       const swipeBloks = mainContainer.querySelectorAll("._stickySwipeElement");
+      const anotherSwipeBlocks = mainContainer.querySelectorAll("._anotherStickySwipeElement");
       swipeBloks.forEach((block, index) => {
+        if (index === indexEl) {
+          block.classList.add("_active");
+        } else {
+          block.classList.remove("_active");
+        }
+      });
+      anotherSwipeBlocks.forEach((block, index) => {
         if (index === indexEl) {
           block.classList.add("_active");
         } else {

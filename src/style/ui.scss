@@ -60,7 +60,8 @@
 ._fixed {
   overflow: hidden;
 }
-._stickySwipeElement {
+._stickySwipeElement,
+._anotherStickySwipeElement {
   visibility: hidden;
   opacity: 0;
   transition: 1s;
