@@ -34,6 +34,7 @@ const path = {
     js: `${project_folder}/js/`,
     images: `${project_folder}/images/`,
     fonts: `${project_folder}/fonts/`,
+    video: `${project_folder}/video`,
   },
   src: {
     html: [`${source_folder}/pages/*.html`, `!${source_folder}/pages/_*.html`],
@@ -41,6 +42,7 @@ const path = {
     js: `${source_folder}/js/script.js`,
     images: `${source_folder}/images/**/*.+(png|jpg|gif|ico|svg|webp|jpeg)`,
     fonts: `${source_folder}/fonts/*.ttf`,
+    video: `${source_folder}/video/*`,
   },
   watch: {
     html: `${source_folder}/**/*.html`,
@@ -48,6 +50,7 @@ const path = {
     styleComponents: `${source_folder}/components/**/*.scss`,
     js: `${source_folder}/js/**/*.js`,
     images: `${source_folder}/images/**/*.+(png|jpg|gif|ico|svg|webp|jpeg)`,
+    video: `${source_folder}/video/*`,
   },
   clean: `./${project_folder}/`,
 };
@@ -138,7 +141,11 @@ function imagesHandler() {
     .pipe(dest(path.build.images))
     .pipe(browsersync.stream({ stream: true }));
 }
-
+function videoHandler() {
+  return src(path.src.video)
+    .pipe(dest(path.build.video))
+    .pipe(browsersync.stream({ stream: true }));
+}
 function fontsHandler() {
   src(path.src.fonts)
     .pipe(ttf2woff())
@@ -177,6 +184,7 @@ function watchFiles() {
   gulp.watch([path.watch.style], styleHandler);
   gulp.watch([path.watch.styleComponents], styleHandler);
   gulp.watch([path.watch.images], imagesHandler);
+  gulp.watch([path.watch.video], videoHandler);
   gulp.watch([path.watch.js], jsHandler);
 }
 
@@ -204,6 +212,7 @@ const build = gulp.series(
     htmlHandler,
     jsHandler,
     imagesHandler,
+    videoHandler,
     fontsHandler,
   ), fontsCreator,
 );
@@ -212,6 +221,7 @@ const watch = gulp.parallel(build, watchFiles, browserSync);
 exports.fontsCreator = fontsCreator;
 exports.fontsHandler = fontsHandler;
 exports.imagesHandler = imagesHandler;
+exports.videoHandler = videoHandler;
 exports.styleHandler = styleHandler;
 exports.htmlHandler = htmlHandler;
 exports.jsHandler = jsHandler;

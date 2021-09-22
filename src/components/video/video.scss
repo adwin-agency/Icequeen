@@ -71,8 +71,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: .5s;
         @media (max-width: $s) {
             max-width: 18.6rem;
+        }
+        &._hide {
+          opacity: 0;
+          transform: scale(0);
         }
     }
 
