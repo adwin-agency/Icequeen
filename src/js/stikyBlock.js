@@ -63,7 +63,6 @@ const stikyBlock = () => {
             getClass(index);
           }
         }
-        console.log(counter);
       }
       if ((window.pageYOffset > mainContainerOffset) && window.pageYOffset < (mainContainerOffset + mainContainerHeight)) {
         watch();
