@@ -2,20 +2,16 @@
 /* eslint-disable no-use-before-define */
 const popup = (request = true) => {
   const allPopupElements = [...document.querySelectorAll("[data-popup]")];
-  const poupButtonArray = [...document.querySelectorAll("._popup-close")];
   const popups = [...document.querySelectorAll("._popup")];
 
   const popupNames = {
     successful: "successful",
     callUs: "callUs",
   };
-  if (allPopupElements && poupButtonArray) {
+  if (allPopupElements && popups) {
     allPopupElements.forEach((popupEl) => {
       popupEl.addEventListener("click", popupHandler);
     });
-    // poupButtonArray.forEach((popupEl) => {
-    //   popupEl.addEventListener("click", popupClose);
-    // });
     popups.forEach((popupEl) => {
       popupEl.addEventListener("click", popupClose);
     });
