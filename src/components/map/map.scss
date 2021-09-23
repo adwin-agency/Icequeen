@@ -1,5 +1,7 @@
 .map {
     background-color: $oceanBlueColor;
+    position: relative;
+    z-index: -1;
     // .map__container
 
     &__container {
@@ -21,12 +23,12 @@
         z-index: 0;
         &._animation {
           opacity: 1;
-          transform: translateX(0);
+          transform: translate(0, 0);
           @media (max-width: $s) {
-            transform: translateY(-22%);
+            top: -22%;
           }
           @media (max-width: $iphoneMax) {
-            transform: translateY(-28%);
+            top: -28%;
           }
         }
         &._animation._active-animation {

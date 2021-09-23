@@ -161,8 +161,8 @@
         @include adaptive-value("padding-bottom", 45, 25, 1);
 
         @media (max-width: $s) {
-            padding-left: 1rem;
-            padding-right: 1rem;
+            // padding-left: 1rem;
+            // padding-right: 1rem;
         }
     }
 
