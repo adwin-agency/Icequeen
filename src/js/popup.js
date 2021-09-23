@@ -33,11 +33,13 @@ const popup = (request = true) => {
       if (attributePopup === successful && request) {
         const successfulPopup = document.querySelector(".successful-popup");
         popupOpen(successfulPopup);
-        popupClose(event);
       }
       if (attributePopup === callUs) {
         const requestPopup = document.querySelector(".request-popup");
         popupOpen(requestPopup);
+        if (requestPopup.classList.contains("._open")) {
+          popupClose(event);
+        }
       }
     }
 

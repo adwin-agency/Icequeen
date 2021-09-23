@@ -124,6 +124,9 @@
     }
     @media (min-width: $s) {
       max-width: 38.6rem;
+      .request-average__form {
+        height: 100%;
+      }
     }
   }
 }
