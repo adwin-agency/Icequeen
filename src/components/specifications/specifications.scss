@@ -4,7 +4,11 @@
   // .specifications__container
   &__wrapper {
     padding: 0 1rem;
-    height: 357.143rem;
+    height: 300rem;
+
+    @media (max-width: $s) {
+        height: 357.143rem;
+    }
   }
   &__container {
     position: sticky;
