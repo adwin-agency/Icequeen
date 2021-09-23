@@ -3,7 +3,7 @@
 const popup = (request = true) => {
   const allPopupElements = [...document.querySelectorAll("[data-popup]")];
   const popups = [...document.querySelectorAll("._popup")];
-
+  // храним имена Popup'ов;
   const popupNames = {
     successful: "successful",
     callUs: "callUs",
@@ -22,12 +22,14 @@ const popup = (request = true) => {
       const target = event.currentTarget;
       const attributePopup = target.getAttribute("data-popup");
 
+      // Получаем имена Popup'ов
       const {
         successful,
         callUs,
       } = popupNames;
 
       // Проверяем успешен ли ответ от сервера
+      // Условия
       if (attributePopup === successful && request) {
         const successfulPopup = document.querySelector(".successful-popup");
         popupOpen(successfulPopup);
@@ -41,6 +43,9 @@ const popup = (request = true) => {
 
     function popupClose(event) {
       if (event.target.classList.contains("_popup-close") || event.target.classList.contains("_popup-close-area")) {
+        const popupContainer = searchParent(event.target, "._popup");
+        popupContainer.classList.remove("_open");
+      } else if (event.target.attributes.type.value === "submit") {
         const popupContainer = searchParent(event.target, "._popup");
         popupContainer.classList.remove("_open");
       }

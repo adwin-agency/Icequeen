@@ -15,17 +15,21 @@
     border-radius: 3.6rem;
     max-width: 113rem;
     margin: 0 auto;
+    height: 70vh;
 
     @media (max-width: $s) {
       flex-direction: column;
       align-items: center;
       top: 18%;
+      height: 80vh;
     }
     @media (max-width: $iphoneMax) {
       top: 16%;
+
     }
     @media (max-width: $xxs) {
       top: 12%;
+      height: 86vh;
     }
   }
 
@@ -114,6 +118,9 @@
       min-height: 27.6rem;
       padding-top: 2rem;
     }
+    @media (max-width: $xs) {
+      padding: 2rem;
+    }
   }
 
   // .specifications__title
@@ -137,20 +144,22 @@
 
   // .specifications__box
   &__box {
-    height: 100%;
-    position: relative;
-    height: 20.43rem;
-    @media (max-width: $iphoneMax) {
-      height: 23.43rem;
-    }
+    display: flex;
+    flex-direction: column;
+    // height: 100%;
+    // position: relative;
+    // height: 20.43rem;
+    // @media (max-width: $iphoneMax) {
+    //   height: 23.43rem;
+    // }
 
-    @media (max-width: $xxs) {
-      height: 28.43rem;
-    }
+    // @media (max-width: $xxs) {
+    //   height: 28.43rem;
+    // }
   }
   // .specifications__box-content
   &__box-content {
-    position: absolute;
+    z-index: 10;
   }
 
   // .specifications__subtitle
