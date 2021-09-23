@@ -35,10 +35,11 @@ const stikyBlock = () => {
     };
 
     const mainContainerHeight = mainContainer.offsetHeight;
-    const heightToStartSwiping = mainContainerHeight / numberOfElements;
+    let heightToStartSwiping = mainContainerHeight / numberOfElements;
     const endPointAnimation = mainContainerHeight - heightToStartSwiping;
+    heightToStartSwiping = endPointAnimation / numberOfElements;
     let counter = 0;
-    let index = 0;
+    let index = -1;
     let oldScrollTopPosition = 0;
     let flag = true;
 
@@ -64,13 +65,14 @@ const stikyBlock = () => {
           if (index <= numberOfElements && index >= 0) {
             getClass(index);
           }
-        } else if (window.pageYOffset - mainContainerOffset < counter && flag === false) {
+        } else if ((window.pageYOffset - mainContainerOffset) + heightToStartSwiping < counter && flag === false) {
           index--;
           counter -= heightToStartSwiping;
           if (index <= numberOfElements && index >= 0) {
             getClass(index);
           }
         }
+        // console.log(counter, index, window.pageYOffset - mainContainerOffset, endPointAnimation);
       }
       if ((window.pageYOffset > mainContainerOffset) && window.pageYOffset < (mainContainerOffset + mainContainerHeight)) {
         watch();
