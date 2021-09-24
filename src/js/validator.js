@@ -45,6 +45,10 @@ class FormValidator {
   }
 
   checkInputValidity(input) {
+    console.log();
+    if (input.value.length <= 0) {
+      return false;
+    }
     if (input.validity.tooShort === true) {
       return false;
     }
@@ -57,6 +61,11 @@ class FormValidator {
     return true;
   }
 
+  resetForm() {
+    this.form.reset();
+    this.setSubmitButtonState(false, this.button);
+  }
+
   setSubmitButtonState(flag, button) {
     if (flag === true) {
       button.removeAttribute("disabled");
@@ -67,6 +76,7 @@ class FormValidator {
 
   listener() {
     this.form.addEventListener("input", this.statusForm.bind(this));
+    this.button.addEventListener("click", this.resetForm.bind(this));
   }
 }
 const validationLarge = new FormValidator(VALIDATOR_LARGE);

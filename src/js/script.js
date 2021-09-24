@@ -4,4 +4,6 @@
 @@include("../js/popup.js");
 @@include("../js/stikyBlock.js");
 @@include("../js/header.js");
-@@include("../js/video.js")
+@@include("../js/video.js");
+@@include("../js/formMask.js");
+@@include("../js/sendForms.js");

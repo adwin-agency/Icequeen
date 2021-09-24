@@ -1,11 +1,11 @@
+/* eslint-disable max-len */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable no-use-before-define */
-const popup = (request = true) => {
+const popup = () => {
   const allPopupElements = [...document.querySelectorAll("[data-popup]")];
   const popups = [...document.querySelectorAll("._popup")];
   // храним имена Popup'ов;
   const popupNames = {
-    successful: "successful",
     callUs: "callUs",
   };
   if (allPopupElements && popups) {
@@ -24,19 +24,16 @@ const popup = (request = true) => {
 
       // Получаем имена Popup'ов
       const {
-        successful,
         callUs,
       } = popupNames;
 
       // Проверяем успешен ли ответ от сервера
       // Условия
-      if (attributePopup === successful && request) {
-        const successfulPopup = document.querySelector(".successful-popup");
-        popupOpen(successfulPopup);
-      }
       if (attributePopup === callUs) {
         const requestPopup = document.querySelector(".request-popup");
         popupOpen(requestPopup);
+        // window.dataLayer = window.dataLayer || [];
+        // window.dataLayer.push({ event: "event-name" });
         if (requestPopup.classList.contains("._open")) {
           popupClose(event);
         }
@@ -47,9 +44,11 @@ const popup = (request = true) => {
       if (event.target.classList.contains("_popup-close") || event.target.classList.contains("_popup-close-area")) {
         const popupContainer = searchParent(event.target, "._popup");
         popupContainer.classList.remove("_open");
-      } else if (event.target.attributes.type.value === "submit") {
-        const popupContainer = searchParent(event.target, "._popup");
-        popupContainer.classList.remove("_open");
+      } else if (event.target.attributes.type !== undefined && (event.target.attributes.type.value === "submit")) {
+        // const popupContainer = searchParent(event.target, "._popup");
+        // popupContainer.classList.remove("_open");
+        // window.dataLayer = window.dataLayer || [];
+        // window.dataLayer.push({ event: "event-name" });
       }
     }
 
