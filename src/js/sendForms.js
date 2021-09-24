@@ -29,8 +29,19 @@ function sendForms() {
       })
         .then((res) => {
           if (res.ok) {
+            console.log(event.target);
             const successfulPopup = document.querySelector(".successful-popup");
-            successfulPopup.classList.add("_open");
+            const formTarget = searchParent(event.target, "form");
+            if (formTarget) {
+              const name = formTarget.getAttribute("name")
+              if (name) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: name });
+              }
+            }
+            if (successfulPopup) {
+              successfulPopup.classList.add("_open");
+            }
             const popupContainer = searchParent(form, "._popup._open");
             if (popupContainer) {
               popupContainer.classList.remove("_open");

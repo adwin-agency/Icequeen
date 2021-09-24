@@ -32,8 +32,8 @@ const popup = () => {
       if (attributePopup === callUs) {
         const requestPopup = document.querySelector(".request-popup");
         popupOpen(requestPopup);
-        // window.dataLayer = window.dataLayer || [];
-        // window.dataLayer.push({ event: "event-name" });
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: attributePopup });
         if (requestPopup.classList.contains("._open")) {
           popupClose(event);
         }
@@ -44,12 +44,11 @@ const popup = () => {
       if (event.target.classList.contains("_popup-close") || event.target.classList.contains("_popup-close-area")) {
         const popupContainer = searchParent(event.target, "._popup");
         popupContainer.classList.remove("_open");
-      } else if (event.target.attributes.type !== undefined && (event.target.attributes.type.value === "submit")) {
-        // const popupContainer = searchParent(event.target, "._popup");
-        // popupContainer.classList.remove("_open");
-        // window.dataLayer = window.dataLayer || [];
-        // window.dataLayer.push({ event: "event-name" });
       }
+      // else if (event.target.attributes.type !== undefined && (event.target.attributes.type.value === "submit")) {
+      //   const popupContainer = searchParent(event.target, "._popup");
+      //   popupContainer.classList.remove("_open");
+      // }
     }
 
     function popupOpen(elementOpen) {
