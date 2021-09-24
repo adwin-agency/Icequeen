@@ -45,19 +45,24 @@ class FormValidator {
   }
 
   checkInputValidity(input) {
-    console.log();
     if (input.value.length <= 0) {
+      input.previousElementSibling.classList.add("_required");
       return false;
     }
     if (input.validity.tooShort === true) {
+      input.previousElementSibling.classList.add("_error");
       return false;
     }
     if (input.validity.valueMissing === true) {
+      input.previousElementSibling.classList.add("_error");
       return false;
     }
     if (input.validity.patternMismatch === true) {
+      input.previousElementSibling.classList.add("_error");
       return false;
     }
+    input.previousElementSibling.classList.remove("_error");
+    input.previousElementSibling.classList.remove("_required");
     return true;
   }
 

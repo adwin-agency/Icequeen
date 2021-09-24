@@ -33,7 +33,7 @@ function sendForms() {
             const successfulPopup = document.querySelector(".successful-popup");
             const formTarget = searchParent(event.target, "form");
             if (formTarget) {
-              const name = formTarget.getAttribute("name")
+              const name = formTarget.getAttribute("name");
               if (name) {
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({ event: name });
