@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 function sendForms() {
   const { forms } = document;
 
@@ -29,7 +30,6 @@ function sendForms() {
       })
         .then((res) => {
           if (res.ok) {
-            console.log(event.target);
             const successfulPopup = document.querySelector(".successful-popup");
             const formTarget = searchParent(event.target, "form");
             if (formTarget) {
