@@ -3,17 +3,17 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 100 !important;
 
   &._menu-open {
     .header__menu {
       visibility: visible;
       pointer-events: auto;
       transform: translate(0, 0);
-
     }
     .header__container {
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -85,7 +85,6 @@
     padding: 0 1rem;
     // width: 100%;
 
-
     @media (min-width: $m) {
       z-index: 100;
     }
@@ -102,7 +101,7 @@
       visibility: hidden;
       pointer-events: none;
       transform: translate(-120%, 0);
-      transition: .3s;
+      transition: 0.3s;
       background-color: $whiteColor;
       overflow-y: auto;
       & .menu__body {
@@ -230,7 +229,6 @@
           background-color: $blueColor;
         }
       }
-
     }
   }
 }

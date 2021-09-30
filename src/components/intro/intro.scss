@@ -32,6 +32,8 @@
       }
     }
     &.column-text {
+      max-width: 36rem;
+      z-index: 2;
       @media (max-width: $m) {
         padding-left: 1.4rem;
         padding-right: 1.4rem;
@@ -51,16 +53,16 @@
     line-height: 1.6rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    @include adaptive-value("font-size",20, 17, 960);
-    @include adaptive-value("margin-top",260, 120, 960);
+    @include adaptive-value("font-size", 20, 17, 960);
+    @include adaptive-value("margin-top", 260, 120, 960);
     position: relative;
     display: flex;
     @media (min-width: $l) {
       &::before {
-        content: '';
+        content: "";
         flex: 0 0 4.3rem;
         background-color: $blueColor;
-        margin-top: .5rem;
+        margin-top: 0.5rem;
         height: 0.25rem;
         margin-right: 1rem;
       }
@@ -74,8 +76,8 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: $deepBlueColor;
-    @include adaptive-value('font-size',57, 30, 1);
-    @include adaptive-value("margin-top",26, 17, 1);
+    @include adaptive-value("font-size", 57, 20, 1);
+    @include adaptive-value("margin-top", 26, 17, 1);
     // .intro__title_accent
 
     &_accent {
@@ -83,8 +85,11 @@
       font-weight: bold;
       // line-height: 4.2rem;
       transform: translateX(7rem);
-      @include adaptive-value('font-size',101, 40, 1);
-      @include adaptive-value('line-height',60, 28, 1);
+      @include adaptive-value("font-size", 101, 40, 1);
+      @include adaptive-value("line-height", 80, 38, 1);
+      @media (min-width: $s) {
+        white-space: nowrap;
+      }
       @media (max-width: $xs) {
         transform: translateX(0);
       }
@@ -94,7 +99,7 @@
   // .intro__list
 
   &__list {
-    @include adaptive-value('margin-top', 150, 40, 960);
+    @include adaptive-value("margin-top", 150, 40, 960);
     @media (max-width: $xs) {
       display: none;
     }
@@ -107,7 +112,7 @@
     line-height: 1.5rem;
     text-transform: uppercase;
     color: $blueColor;
-    @include adaptive-value('margin-bottom', 26, 15, 960);
+    @include adaptive-value("margin-bottom", 26, 15, 960);
   }
   // .intro__column-image
 
