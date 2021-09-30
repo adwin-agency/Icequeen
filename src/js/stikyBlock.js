@@ -3,7 +3,7 @@
 /* eslint-disable no-plusplus */
 const stikyBlock = () => {
   const mainContainer = document.querySelector("._stickyContainer");
-  const numberOfElements = 5;
+  const numberOfElements = mainContainer.getAttribute("data-count");
   if (mainContainer) {
     function getClass(indexEl = 0) {
       const swipeBloks = mainContainer.querySelectorAll("._stickySwipeElement");
