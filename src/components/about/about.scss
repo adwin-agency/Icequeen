@@ -32,8 +32,8 @@
     // .about__manufacturer-icon
 
     &__manufacturer-icon {
-        width: 12.5rem;
-        height: 5rem;
+      height: 4rem;
+      object-fit: contain;
     }
 
     // .about__description
