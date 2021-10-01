@@ -3,31 +3,25 @@
 /* eslint-disable no-plusplus */
 const stikyBlock = () => {
   const mainContainer = document.querySelector("._stickyContainer");
-  const numberOfElements = 5;
+  const numberOfElements = mainContainer.getAttribute("data-count");
   if (mainContainer) {
     function getClass(indexEl = 0) {
       const swipeBloks = mainContainer.querySelectorAll("._stickySwipeElement");
       const anotherSwipeBlocks = mainContainer.querySelectorAll("._anotherStickySwipeElement");
-      if (swipeBloks) {
-        swipeBloks.forEach((block, index) => {
-          if (index === indexEl) {
-            block.classList.add("_active");
-          } else {
-            block.classList.remove("_active");
-          }
-        });
-      } else {
-        console.log("элемент с классом ._stickySwipeElement не найден");
-      }
-      if (anotherSwipeBlocks) {
-        anotherSwipeBlocks.forEach((block, index) => {
-          if (index === indexEl) {
-            block.classList.add("_active");
-          } else {
-            block.classList.remove("_active");
-          }
-        });
-      }
+      swipeBloks.forEach((block, index) => {
+        if (index === indexEl) {
+          block.classList.add("_active");
+        } else {
+          block.classList.remove("_active");
+        }
+      });
+      anotherSwipeBlocks.forEach((block, index) => {
+        if (index === indexEl) {
+          block.classList.add("_active");
+        } else {
+          block.classList.remove("_active");
+        }
+      });
     }
     getClass();
     const offset = (element) => {
