@@ -30,6 +30,9 @@
       @media (max-width: $m) {
         grid-row-end: span 2;
       }
+      & img {
+        object-fit: contain;
+      }
     }
     &.column-text {
       max-width: 30rem;
