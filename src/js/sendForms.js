@@ -37,6 +37,7 @@ function sendForms() {
               if (name) {
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({ event: name });
+                formTarget.reset();
               }
             }
             if (successfulPopup) {

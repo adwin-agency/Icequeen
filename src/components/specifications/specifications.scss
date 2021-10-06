@@ -48,6 +48,8 @@
     & img {
       object-fit: contain;
       width: auto;
+      height: unset;
+      max-height: 100%;
     }
     @media (min-width: $s) {
       margin-bottom: -6.43rem;
@@ -155,6 +157,7 @@
   &__box {
     display: flex;
     flex-direction: column;
+    position: relative;
     // height: 100%;
     // position: relative;
     // height: 20.43rem;

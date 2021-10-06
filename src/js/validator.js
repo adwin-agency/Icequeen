@@ -1,28 +1,9 @@
 /* eslint-disable class-methods-use-this */
 document.addEventListener("DOMContentLoaded", () => {
-  const VALIDATOR_LARGE = {
-    inputs: [...document.forms.largeForm.getElementsByTagName("input")],
-    form: document.forms.largeForm,
-    button: document.forms.largeForm.querySelector("button[type=\"submit\"]"),
-  };
-
-  const VALIDATOR_AVERAGE = {
-    inputs: [...document.forms.averageForm.getElementsByTagName("input")],
-    form: document.forms.averageForm,
-    button: document.forms.averageForm.querySelector("button[type=\"submit\"]"),
-  };
-
-  const VALIDATOR_MEDIUM = {
-    inputs: [...document.forms.mediumForm.getElementsByTagName("input")],
-    form: document.forms.mediumForm,
-    button: document.forms.mediumForm.querySelector("button[type=\"submit\"]"),
-  };
-
-  const VALIDATION_POPUP_FORM = {
-    inputs: [...document.forms.popupForm.getElementsByTagName("input")],
-    form: document.forms.popupForm,
-    button: document.forms.popupForm.querySelector("button[type=\"submit\"]"),
-  };
+  const { largeForm } = document.forms;
+  const { averageForm } = document.forms;
+  const { mediumForm } = document.forms;
+  const { popupForm } = document.forms;
 
   class FormValidator {
     constructor({
@@ -67,11 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return true;
     }
 
-    resetForm() {
-      this.form.reset();
-      this.setSubmitButtonState(false, this.button);
-    }
-
     setSubmitButtonState(flag, button) {
       if (flag === true) {
         button.removeAttribute("disabled");
@@ -82,15 +58,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     listener() {
       this.form.addEventListener("input", this.statusForm.bind(this));
-      this.button.addEventListener("click", this.resetForm.bind(this));
     }
   }
-  const validationLarge = new FormValidator(VALIDATOR_LARGE);
-  const validationAverage = new FormValidator(VALIDATOR_AVERAGE);
-  const validationMedium = new FormValidator(VALIDATOR_MEDIUM);
-  const validationPopup = new FormValidator(VALIDATION_POPUP_FORM);
-  validationLarge.statusForm();
-  validationAverage.statusForm();
-  validationMedium.statusForm();
-  validationPopup.statusForm();
+
+  if (largeForm) {
+    const VALIDATOR_LARGE = {
+      inputs: [...largeForm.getElementsByTagName("input")],
+      form: largeForm,
+      button: largeForm.querySelector("button[type=\"submit\"]"),
+    };
+    const validationLarge = new FormValidator(VALIDATOR_LARGE);
+    validationLarge.statusForm();
+  }
+  if (averageForm) {
+    const VALIDATOR_AVERAGE = {
+      inputs: [...averageForm.getElementsByTagName("input")],
+      form: averageForm,
+      button: averageForm.querySelector("button[type=\"submit\"]"),
+    };
+    const validationAverage = new FormValidator(VALIDATOR_AVERAGE);
+    validationAverage.statusForm();
+  }
+  if (mediumForm) {
+    const VALIDATOR_MEDIUM = {
+      inputs: [...mediumForm.getElementsByTagName("input")],
+      form: mediumForm,
+      button: mediumForm.querySelector("button[type=\"submit\"]"),
+    };
+    const validationMedium = new FormValidator(VALIDATOR_MEDIUM);
+    validationMedium.statusForm();
+  }
+  if (popupForm) {
+    const VALIDATION_POPUP_FORM = {
+      inputs: [...popupForm.getElementsByTagName("input")],
+      form: popupForm,
+      button: popupForm.querySelector("button[type=\"submit\"]"),
+    };
+    const validationPopup = new FormValidator(VALIDATION_POPUP_FORM);
+    validationPopup.statusForm();
+  }
 });
